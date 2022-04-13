@@ -35,10 +35,10 @@
     "armlet": "^0.1.8",
     "dotenv": "^6.0.0",
     "truffle": "^5.1.32",
-    "truffle-hdwallet-provider": "1.0.17"
+    "truffle-hdwallet-provider": "^1.0.6"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^8.13.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
