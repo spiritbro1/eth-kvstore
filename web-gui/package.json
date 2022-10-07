@@ -9,16 +9,19 @@
     "@mui/material": "^5.10.7",
     "@mui/x-data-grid": "^5.17.4",
     "@rainbow-me/rainbowkit": "^0.7.0",
+    "@shopify/react-web-worker": "^5.0.6",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^14.2.0",
     "bs58": "^5.0.0",
+    "comlink": "^4.3.1",
     "ethers": "^5.6.8",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
     "lodash.merge": "^4.6.2",
     "metamask-react": "^2.4.0",
     "nft.storage": "^7.0.0",
+    "process": "^0.11.10",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "^5.0.1",
@@ -54,6 +57,7 @@
     "assert": "^2.0.0",
     "openpgp": "^5.5.0",
     "react-app-rewired": "^2.2.1",
-    "stream": "^0.0.2"
+    "stream": "^0.0.2",
+    "worker-loader": "^3.0.8"
   }
 }

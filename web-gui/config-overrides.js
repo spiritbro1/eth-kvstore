@@ -7,7 +7,7 @@ module.exports = function override(config) {
     new webpack.ProvidePlugin({
       process: "process/browser",
       Buffer: ["buffer", "Buffer"],
-    }),
+    })
   ]);
   config.resolve.extensions.push(".mjs");
   config.module.rules.push({
@@ -16,7 +16,16 @@ module.exports = function override(config) {
       fullySpecified: false,
     },
   });
-
+  config.module.rules.unshift({
+    test: /\.worker\.js$/,
+    use: {
+      loader: 'worker-loader',
+      options: {
+        // Use directory structure & typical names of chunks produces by "react-scripts"
+        filename: 'static/js/[name].[contenthash:8].js',
+      },
+    },
+  });
   return {
     ...config,
     // This is needed to not show the warning about this modules don't have src files, only on dist (build)

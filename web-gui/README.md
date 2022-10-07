@@ -6,9 +6,19 @@
 - [ganache](https://github.com/trufflesuite/ganache) or [anvil](https://book.getfoundry.sh/reference/anvil/) for local RPC node
 - [truffle](https://trufflesuite.com/docs/truffle/quickstart/) 
 - [nft.storage](https://nft.storage)
+- [alchemy](https://dashboard.alchemy.com/)
 
 ## Demo
 [untitled.webm](https://user-images.githubusercontent.com/62529025/194456205-0a133dd3-24c8-481a-b83e-d3d74562dc4f.webm)
+
+## Website Demo
+
+https://web-gui-ruby.vercel.app
+
+## Demo contract address
+
+https://mumbai.polygonscan.com/address/0x93b868BDa2f70E41958835fAB4F232ddEC2d39F6
+
 
 ## Development
 
@@ -38,6 +48,7 @@ Now copy paste the contract address in `ethkvstore.address.json` into `env.devel
 ```
 REACT_APP_NFT_STORAGE_API=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
 REACT_APP_CONTRACT=0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+REACT_APP_ALCHEMY_ID=AbBN9jhn1aw8EHxibz1fRSFs
 ```
 
 Now go inside web-gui folder and run:

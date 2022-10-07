@@ -32,6 +32,7 @@
   "license": "MIT",
   "homepage": "https://github.com/humanprotocol/eth-kvstore",
   "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.17",
     "armlet": "^0.1.8",
     "dotenv": "^6.0.0",
     "truffle": "^5.1.32",

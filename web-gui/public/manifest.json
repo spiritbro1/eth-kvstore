@@ -2,7 +2,11 @@
   "short_name": "eth-kvstore",
   "name": "eth-kvstore",
   "icons": [
-    
+    {
+      "src": "apple.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
   ],
   "start_url": ".",
   "display": "standalone",

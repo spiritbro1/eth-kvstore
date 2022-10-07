@@ -15,9 +15,9 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum,chain.localhost],
+  [chain.polygonMumbai,chain.localhost],
   [
-    alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
+    alchemyProvider({ apiKey: process.env.REACT_APP_ALCHEMY_ID }),
     publicProvider()
   ]
 );
@@ -36,7 +36,7 @@ const wagmiClient = createClient({
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
-  <React.StrictMode>
+  <React.Suspense fallback={<>loading...</>}>
        <WagmiConfig client={wagmiClient}>
     <RainbowKitProvider theme={lightTheme({
       accentColor: '#000000',
@@ -46,7 +46,7 @@ root.render(
       <App />
     </RainbowKitProvider>
     </WagmiConfig>
-  </React.StrictMode>
+  </React.Suspense>
 );
 
 // If you want to start measuring performance in your app, pass a function

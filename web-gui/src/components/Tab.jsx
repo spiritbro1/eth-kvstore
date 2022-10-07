@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useState,Suspense} from 'react';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -24,7 +24,7 @@ function TabPanel(props) {
   );
 }
 export default function CenteredTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -35,9 +35,7 @@ export default function CenteredTabs() {
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <Tabs value={value} onChange={handleChange} variant="fullWidth" >
-        <Tab label="Generate Public Key" >
-   
-        </Tab>
+        <Tab label="Generate Public Key" ></Tab>
         <Tab label="List Public Key" />
         <Tab label="Key Value Store" />
         <Tab label="Decrypt" />
@@ -48,7 +46,10 @@ export default function CenteredTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} >
-        <GeneratePGP/>
+      
+          <GeneratePGP/>
+      
+        
         </TabPanel>
         <TabPanel value={value} index={1} >
         <Table/>
