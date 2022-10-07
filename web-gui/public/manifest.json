@@ -1,0 +1,11 @@
+{
+  "short_name": "eth-kvstore",
+  "name": "eth-kvstore",
+  "icons": [
+    
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
