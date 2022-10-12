@@ -1,4 +1,6 @@
 pragma solidity ^0.5.0;
+
+
 pragma experimental ABIEncoderV2;
 contract KVStore {
     uint256 private constant MAX_STRING_LENGTH = 1000;
@@ -18,7 +20,8 @@ contract KVStore {
     function set(string memory _key, string memory _value) public {
         require(
             bytes(_key).length <= MAX_STRING_LENGTH &&
-                bytes(_value).length <= MAX_STRING_LENGTH
+                bytes(_value).length <= MAX_STRING_LENGTH,
+                 "Maximum string length"
         );
         store[msg.sender][_key] = _value;
     }
