@@ -54,7 +54,7 @@ module.exports = {
       provider: () =>
         new PrivateKeyProvider({
           privateKeys: [
-            "34b7a3365f5880e9681b43d84aa77796c18503ff2505d5eb00f9a1806abca746",
+            POLYGON_PRIVATE_KEY,
           ],
           providerOrUrl: "https://matic-mumbai.chainstacklabs.com",
         }),
