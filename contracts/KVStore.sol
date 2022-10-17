@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
-
-
 pragma experimental ABIEncoderV2;
+
+
 contract KVStore {
     uint256 private constant MAX_STRING_LENGTH = 1000;
     mapping(address => mapping(string => string)) private store;
@@ -21,12 +21,12 @@ contract KVStore {
         require(
             bytes(_key).length <= MAX_STRING_LENGTH &&
                 bytes(_value).length <= MAX_STRING_LENGTH,
-                 "Maximum string length"
+                "Maximum string length"
         );
         store[msg.sender][_key] = _value;
     }
 
-    function setPGP(string memory _fingerprint,string memory publicKey) public {
+    function setPGP(string memory _fingerprint, string memory publicKey) public {
         require(!checksum[_fingerprint], "pgp already used");
         checksum[_fingerprint] = true;
         pubkeyPGP[msg.sender].push(publicKey);
