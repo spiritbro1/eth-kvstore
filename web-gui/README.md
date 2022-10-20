@@ -58,15 +58,4 @@ $ yarn start
 
 Congrats you're now successfully running the web-gui to store key-value on ethereum blockchain
 
-# Deploy smart contract to mumbai testnet
 
-Make sure you are on main folder create `.env` file and fill in your polygon private key
-
-```
-POLYGON_PRIVATE_KEY=<your polygon mumbai private key>
-```
-Deploy using this command:
-
-```bash
-$ truffle migrate --network mumbai
-```

@@ -1,14 +1,7 @@
 require("dotenv").config();
 
-const {
-  INFURA_TOKEN,
-  MNEMONIC,
-  ETH_HOST,
-  ETH_PORT,
-  POLYGON_PRIVATE_KEY,
-} = process.env;
+const { INFURA_TOKEN, MNEMONIC, ETH_HOST, ETH_PORT } = process.env;
 const HDWalletProvider = require("truffle-hdwallet-provider");
-const PrivateKeyProvider = require("@truffle/hdwallet-provider");
 
 module.exports = {
   networks: {
@@ -49,16 +42,6 @@ module.exports = {
           `https://rinkeby.infura.io/${INFURA_TOKEN}`
         ),
       network_id: "4",
-    },
-    mumbai: {
-      provider: () =>
-        new PrivateKeyProvider({
-          privateKeys: [
-            POLYGON_PRIVATE_KEY,
-          ],
-          providerOrUrl: "https://matic-mumbai.chainstacklabs.com",
-        }),
-      network_id: 80001,
     },
   },
 };
