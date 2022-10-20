@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box className="boxFlexGrow">
       <AppBar position="static">
         <Toolbar>
           <Grid
@@ -19,7 +19,7 @@ export default function ButtonAppBar() {
             <Typography variant="h6" component="div">
               eth-kvstore
             </Typography>
-            <ConnectButton style={{ backgroundColor: 'black' }} />
+            <ConnectButton  />
           </Grid>
         </Toolbar>
       </AppBar>

@@ -1,12 +1,13 @@
 {
-  "short_name": "eth-kvstore",
-  "name": "eth-kvstore",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
+ 
     {
       "src": "apple.png",
       "type": "image/png",
-      "sizes": "512x512"
-    },
+      "sizes": "192x192"
+    }
   ],
   "start_url": ".",
   "display": "standalone",

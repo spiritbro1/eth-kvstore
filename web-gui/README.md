@@ -8,16 +8,14 @@
 - [nft.storage](https://nft.storage)
 - [alchemy](https://dashboard.alchemy.com/)
 
-## Demo
-[untitled.webm](https://user-images.githubusercontent.com/62529025/194456205-0a133dd3-24c8-481a-b83e-d3d74562dc4f.webm)
 
 ## Website Demo
 
-https://web-gui-ruby.vercel.app
+https://web-gui-spiritbro.vercel.app/
 
 ## Demo contract address
 
-https://mumbai.polygonscan.com/address/0x93b868BDa2f70E41958835fAB4F232ddEC2d39F6
+https://mumbai.polygonscan.com/address/0x05877184aB2ddAb0F9D1fa6c573392fCe7A7a74a
 
 
 ## Development
@@ -37,7 +35,7 @@ Now run this command to run local RPC node:
 $ anvil
 ```
 
-Open new terminal and deploy our contract by running this command:
+Go back to main folder,open new terminal and deploy our contract by running this command:
 
 ```bash
 $ truffle migrate --network development
@@ -46,9 +44,10 @@ $ truffle migrate --network development
 Now copy paste the contract address in `ethkvstore.address.json` into `env.development` in `web-gui` folder, it will look something like this, don't forget also add your nft.storage api key:
 
 ```
-REACT_APP_NFT_STORAGE_API=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-REACT_APP_CONTRACT=0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
-REACT_APP_ALCHEMY_ID=AbBN9jhn1aw8EHxibz1fRSFs
+REACT_APP_NFT_STORAGE_API=<your nft.storage api key>
+REACT_APP_CONTRACT=<your contract address>
+REACT_APP_ALCHEMY_ID=<your alchemy ID>
+REACT_APP_API_URL=<your API URL>
 ```
 
 Now go inside web-gui folder and run:
@@ -59,3 +58,15 @@ $ yarn start
 
 Congrats you're now successfully running the web-gui to store key-value on ethereum blockchain
 
+# Deploy smart contract to mumbai testnet
+
+Make sure you are on main folder create `.env` file and fill in your polygon private key
+
+```
+POLYGON_PRIVATE_KEY=<your polygon mumbai private key>
+```
+Deploy using this command:
+
+```bash
+$ truffle migrate --network mumbai
+```

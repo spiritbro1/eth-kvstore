@@ -62,28 +62,17 @@ contract('KVStore', async (accounts) => {
     assert.isAtLeast(instance.address.length, 10);
   });
 
-  it('store public key and its fingerprint on smart contract', async () => {
-    await instance.setPGP(
-      '71f8b7a5fcd42ddc8fe5b89ae536191d60754345',
+  it('store public key and its ipfs hash on smart contract', async () => {
+    await instance.set(
+      'public_key',
       'bafkreieadxyvobae4a2ww7tytw37dw2ihvvbujj5npjepurraavtaoczcq',
       { from: accountOne },
     );
 
-    const value = await instance.getAllPGP.call(accountOne, {
+    const value = await instance.get.call(accountOne, 'public_key', {
       from: accountOne,
     });
-    assert.equal(value[0], 'bafkreieadxyvobae4a2ww7tytw37dw2ihvvbujj5npjepurraavtaoczcq');
-  });
-
-  it('shouldn\'t store same public key fingerprint multiple times', async () => {
-    await truffleAssert.reverts(
-      instance.setPGP(
-        '71f8b7a5fcd42ddc8fe5b89ae536191d60754345',
-        'bafkreieadxyvobae4a2ww7tytw37dw2ihvvbujj5npjepurraavtaoczcq',
-        { from: accountOne },
-      ),
-      'pgp already used',
-    );
+    assert.equal(value, 'bafkreieadxyvobae4a2ww7tytw37dw2ihvvbujj5npjepurraavtaoczcq');
   });
 
   it('should store encrypted value and decrypt the value', async () => {
