@@ -58,4 +58,16 @@ $ yarn start
 
 Congrats you're now successfully running the web-gui to store key-value on ethereum blockchain
 
+# How to deploy api to generate key
 
+The server to generate key is in `api/` folder you can deploy it simply by using this command:
+
+```bash
+$ vercel .
+```
+
+Or you can put an already made server to generate key in `REACT_APP_API_URL` like this:
+
+```
+REACT_APP_API_URL=https://web-gui-ruby.vercel.app
+```
