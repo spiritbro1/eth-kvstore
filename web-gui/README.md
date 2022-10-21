@@ -71,3 +71,4 @@ Or you can put an already made server to generate key in `REACT_APP_API_URL` lik
 ```
 REACT_APP_API_URL=https://web-gui-ruby.vercel.app
 ```
+

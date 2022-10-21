@@ -1,8 +1,13 @@
 require("dotenv").config();
 
-const { INFURA_TOKEN, MNEMONIC, ETH_HOST, ETH_PORT } = process.env;
-const HDWalletProvider = require("truffle-hdwallet-provider");
-
+const {
+  INFURA_TOKEN,
+  MNEMONIC,
+  ETH_HOST,
+  ETH_PORT,
+  POLYGON_PRIVATE_KEY,
+} = process.env;
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 module.exports = {
   networks: {
     development: {
@@ -12,36 +17,44 @@ module.exports = {
     },
     live: {
       provider: () =>
-        new HDWalletProvider(
-          MNEMONIC,
-          `https://mainnet.infura.io/${INFURA_TOKEN}`
-        ),
+        new HDWalletProvider({
+          mnemonic: MNEMONIC,
+          providerOrUrl: `https://mainnet.infura.io/${INFURA_TOKEN}`,
+        }),
       network_id: "1",
     },
     kovan: {
       provider: () =>
-        new HDWalletProvider(
-          MNEMONIC,
-          `https://kovan.infura.io/${INFURA_TOKEN}`
-        ),
+        new HDWalletProvider({
+          mnemonic: MNEMONIC,
+          providerOrUrl: `https://kovan.infura.io/${INFURA_TOKEN}`,
+        }),
       network_id: "2",
     },
     ropsten: {
       provider: () =>
-        new HDWalletProvider(
-          MNEMONIC,
-          `https://ropsten.infura.io/${INFURA_TOKEN}`
-        ),
+        new HDWalletProvider({
+          mnemonic: MNEMONIC,
+          providerOrUrl: `https://ropsten.infura.io/${INFURA_TOKEN}`,
+        }),
       network_id: "3",
       gas: 4700000,
     },
     rinkeby: {
       provider: () =>
-        new HDWalletProvider(
-          MNEMONIC,
-          `https://rinkeby.infura.io/${INFURA_TOKEN}`
-        ),
+        new HDWalletProvider({
+          mnemonic: MNEMONIC,
+          providerOrUrl: `https://rinkeby.infura.io/${INFURA_TOKEN}`,
+        }),
       network_id: "4",
+    },
+    mumbai: {
+      provider: () =>
+        new HDWalletProvider({
+          privateKeys: [POLYGON_PRIVATE_KEY],
+          providerOrUrl: "https://matic-mumbai.chainstacklabs.com",
+        }),
+      network_id: 80001,
     },
   },
 };
