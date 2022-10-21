@@ -32,7 +32,7 @@ $ yarn
 Now run this command to run local RPC node:
 
 ```bash
-$ anvil
+$ anvil -p 7545
 ```
 
 Go back to main folder,open new terminal and deploy our contract by running this command:
